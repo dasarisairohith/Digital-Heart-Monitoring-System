@@ -14,7 +14,7 @@
   <div class="page-shell">
     <nav class="nav">
       <a class="brand" href="#top" aria-label="PulseTWIN home"><span class="brand-mark">+</span> Pulse<span>TWIN</span></a>
-      <div class="nav-links"><a href="#system">System</a><a href="#experience">Experience</a><a href="#timeline">Timeline</a></div>
+      <div class="nav-links"><a href="#system">System</a><a href="#analytics">Analytics</a><a href="#experience">Experience</a><a href="#timeline">Timeline</a></div>
       <a class="nav-cta" href="#monitor">View live demo <span>↗</span></a>
     </nav>
 
@@ -53,7 +53,29 @@
         <div class="monitor-panel"><div class="panel-header"><span><i></i> PULSETWIN / SESSION 001</span><span id="sessionTime">00:42:18</span></div><div class="bpm-display"><div><span class="label">CURRENT HEART RATE</span><strong id="bpmValue">78</strong><small>BPM</small></div><div class="zone"><span>CALM ZONE</span><div class="zone-bar"><i id="zoneBar"></i></div><small id="zoneText">Balanced</small></div></div><div class="monitor-chart"><div class="chart-grid"></div><svg viewBox="0 0 640 180" preserveAspectRatio="none"><path id="monitorWave" d="M0 105 H75 L91 105 L105 101 L119 109 L133 105 H170 L187 105 L202 101 L217 109 L232 105 H269 L285 105 L301 55 L317 146 L333 105 H371 L387 105 L402 101 L417 109 L432 105 H474 L490 105 L506 101 L521 109 L536 105 H640" /></svg><span class="chart-axis">- 10 sec</span><span class="chart-axis right">NOW</span></div><div class="monitor-controls"><label for="bpmSlider">SIMULATE HEART RATE <output id="sliderOutput">78 BPM</output></label><input id="bpmSlider" type="range" min="52" max="142" value="78" /><div class="control-labels"><span>REST</span><span>ACTIVE</span><span>HIGH STRESS</span></div></div></div>
       </section>
 
-      <section class="section experience-section" id="experience"><div class="section-heading"><div><span class="section-number">03 / THE EXPERIENCE</span><h2>More than<br /><em>a number.</em></h2></div><p>The digital twin turns raw biometric information into an experience that can be felt at a glance — an inviting bridge between data and self-awareness.</p></div><div class="experience-grid"><div class="experience-visual"><div class="unity-chip">UNITY / 3D ENVIRONMENT</div><div class="virtual-heart">♥</div><div class="rings"></div><div class="experience-caption"><span>THE USER'S DIGITAL TWIN</span><strong id="twinState">steady / present</strong></div></div><div class="principles"><article><span>01</span><div><h3>Instant feedback</h3><p>Heart-rate information is visible on the OLED display and in the virtual environment at the same time.</p></div></article><article><span>02</span><div><h3>Immersive understanding</h3><p>A living 3D representation makes physiological change easier to recognize and remember.</p></div></article><article><span>03</span><div><h3>Designed for care</h3><p>An engaging approach to heart-health and stress monitoring that keeps the person at the center.</p></div></article></div></div></section>
+      <section class="analytics-section" id="analytics">
+        <div class="section-heading"><div><span class="section-number">03 / SESSION INTELLIGENCE</span><h2>Read the<br /><em>pattern.</em></h2></div><p>Go beyond a single reading. PulseTWIN summarizes trends, signal quality, and safety cues across the current session.</p></div>
+        <div class="analytics-grid">
+          <div class="trend-card">
+            <div class="card-topline"><span>HEART-RATE TREND</span><button id="resetSession" class="mini-button" type="button">Reset session</button></div>
+            <div class="trend-summary"><strong id="averageBpm">78</strong><span>average BPM<br /><i id="trendDirection">stable</i></span></div>
+            <svg class="trend-chart" viewBox="0 0 680 180" preserveAspectRatio="none" aria-label="Heart rate history"><defs><linearGradient id="trendFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#e9745d" stop-opacity=".3" /><stop offset="1" stop-color="#e9745d" stop-opacity="0" /></linearGradient></defs><path id="trendArea" d="" /><path id="trendLine" d="" /></svg>
+            <div class="trend-axis"><span>10 MIN AGO</span><span>NOW</span></div>
+          </div>
+          <div class="insights-card">
+            <div class="card-topline"><span>SESSION INSIGHTS</span><span class="insight-live"><i></i> LIVE</span></div>
+            <div class="insight-row"><span class="insight-icon">◉</span><div><strong>Signal quality</strong><small id="signalQuality">Excellent · 98%</small></div><b class="good-text">GOOD</b></div>
+            <div class="insight-row"><span class="insight-icon">⌁</span><div><strong>Variability</strong><small id="variabilityText">Low variation detected</small></div><b id="variabilityBadge" class="good-text">CALM</b></div>
+            <div class="insight-row"><span class="insight-icon">!</span><div><strong>Safety check</strong><small id="safetyText">No unusual pattern found</small></div><b id="safetyBadge" class="good-text">CLEAR</b></div>
+          </div>
+          <div class="device-card">
+            <div class="card-topline"><span>DEVICE TELEMETRY</span><span class="device-connected"><i></i> CONNECTED</span></div>
+            <div class="device-grid"><div><small>ESP32</small><strong id="deviceBattery">87%</strong><span>Battery</span></div><div><small>OLED</small><strong>128×64</strong><span>Display</span></div><div><small>PACKET RATE</small><strong>25 Hz</strong><span>Sampling</span></div><div><small>LATENCY</small><strong id="deviceLatency">42 ms</strong><span>Unity link</span></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section experience-section" id="experience"><div class="section-heading"><div><span class="section-number">04 / THE EXPERIENCE</span><h2>More than<br /><em>a number.</em></h2></div><p>The digital twin turns raw biometric information into an experience that can be felt at a glance — an inviting bridge between data and self-awareness.</p></div><div class="experience-grid"><div class="experience-visual"><div class="unity-chip">UNITY / 3D ENVIRONMENT</div><div class="virtual-heart">♥</div><div class="rings"></div><div class="experience-caption"><span>THE USER'S DIGITAL TWIN</span><strong id="twinState">steady / present</strong></div></div><div class="principles"><article><span>01</span><div><h3>Instant feedback</h3><p>Heart-rate information is visible on the OLED display and in the virtual environment at the same time.</p></div></article><article><span>02</span><div><h3>Immersive understanding</h3><p>A living 3D representation makes physiological change easier to recognize and remember.</p></div></article><article><span>03</span><div><h3>Designed for care</h3><p>An engaging approach to heart-health and stress monitoring that keeps the person at the center.</p></div></article></div></div></section>
 
       <section class="timeline-section" id="timeline"><div class="timeline-header"><span class="section-number">04 / PROJECT LOG</span><h2>Built with intent.</h2><p>January — April 2025</p></div><div class="timeline"><div class="timeline-item active"><span>JAN 2025</span><h3>Sense the signal</h3><p>Connected pulse sensor and ESP32 microcontroller to acquire real-time biometric data.</p></div><div class="timeline-item"><span>FEB 2025</span><h3>Make it visible</h3><p>Integrated OLED display for direct, at-a-glance heart-rate feedback.</p></div><div class="timeline-item"><span>MAR 2025</span><h3>Build the twin</h3><p>Created the Unity 3D environment and linked it to the physical data stream.</p></div><div class="timeline-item"><span>APR 2025</span><h3>Complete the loop</h3><p>Refined the experience into an immersive health and stress monitoring concept.</p></div></div></section>
     </main>
