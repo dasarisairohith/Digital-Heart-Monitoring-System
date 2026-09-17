@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PulseTWIN — a digital heart monitoring system connecting pulse sensor data to an immersive Unity digital twin." />
+  <title>PulseTWIN | Digital Heart Monitoring System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <nav class="nav">
+      <a class="brand" href="#top" aria-label="PulseTWIN home"><span class="brand-mark">+</span> Pulse<span>TWIN</span></a>
+      <div class="nav-links"><a href="#system">System</a><a href="#experience">Experience</a><a href="#timeline">Timeline</a></div>
+      <a class="nav-cta" href="#monitor">View live demo <span>↗</span></a>
+    </nav>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="pulse-dot"></span> Health care · IoT · Digital twin</div>
+          <h1>Making the<br /><em>invisible</em> visible.</h1>
+          <p class="hero-text">PulseTWIN transforms live biometric signals into a responsive digital world — making heart health and stress more understandable, visual, and human.</p>
+          <div class="hero-actions"><a class="button button-dark" href="#monitor">Explore the system <span>↓</span></a><a class="text-link" href="#about">Read the story <span>↗</span></a></div>
+        </div>
+        <div class="hero-visual" aria-label="Animated heart rate visualization">
+          <div class="visual-glow"></div><div class="visual-label label-top">LIVE SIGNAL <span>●</span></div>
+          <div class="orbital orbital-one"></div><div class="orbital orbital-two"></div>
+          <div class="heart-core"><div class="heart-shape">♥</div><div class="heart-rate-small">BPM</div><strong id="heroBpm">78</strong></div>
+          <svg class="hero-wave" viewBox="0 0 520 160" preserveAspectRatio="none" aria-hidden="true"><path d="M0 87 H102 L121 87 L139 84 L154 91 L170 87 H195 L210 87 L224 83 L237 92 L249 87 H276 L291 87 L307 42 L321 126 L337 87 H365 L381 87 L397 84 L411 90 L428 87 H520" /></svg>
+          <div class="visual-label label-bottom"><span class="signal-line"></span> ESP32 / PULSE SENSOR</div>
+        </div>
+      </section>
+
+      <section class="metrics-strip" id="about"><div><strong>01</strong><span>physical signal</span></div><div><strong>02</strong><span>digital interpretation</span></div><div><strong>03</strong><span>immersive feedback</span></div><p>One continuous loop from fingertip to virtual world.</p></section>
+
+      <section class="section system-section" id="system">
+        <div class="section-heading"><div><span class="section-number">01 / THE SYSTEM</span><h2>From pulse<br /><em>to presence.</em></h2></div><p>A compact hardware-to-software pipeline captures, interprets, and expresses the body's most immediate signal: its rhythm.</p></div>
+        <div class="system-grid">
+          <article class="system-card featured"><div class="card-index">01</div><div class="card-icon sensor-icon">⌁</div><h3>Sense</h3><p>A pulse sensor reads real-time biometric data through the ESP32 microcontroller.</p><div class="card-foot">PULSE SENSOR <span>→</span> ESP32</div></article>
+          <div class="flow-arrow">→</div>
+          <article class="system-card"><div class="card-index">02</div><div class="card-icon">◌</div><h3>Translate</h3><p>Heart-rate data is cleaned and communicated to the OLED display and Unity application.</p><div class="card-foot">SERIAL DATA <span>→</span> UNITY</div></article>
+          <div class="flow-arrow">→</div>
+          <article class="system-card"><div class="card-index">03</div><div class="card-icon">✦</div><h3>Visualize</h3><p>A responsive 3D digital twin mirrors physiological changes with visual feedback.</p><div class="card-foot">DIGITAL TWIN <span>→</span> INSIGHT</div></article>
+        </div>
+      </section>
+
+      <section class="monitor-section" id="monitor">
+        <div class="monitor-copy"><span class="section-number">02 / LIVE MONITOR</span><h2>A heartbeat,<br /><em>in motion.</em></h2><p>Interact with a simplified view of the PulseTWIN experience. Adjust the simulated signal and watch the system respond.</p><div class="status"><span class="pulse-dot"></span><span id="statusText">System connected</span><span class="status-time">REAL-TIME</span></div></div>
+        <div class="monitor-panel"><div class="panel-header"><span><i></i> PULSETWIN / SESSION 001</span><span id="sessionTime">00:42:18</span></div><div class="bpm-display"><div><span class="label">CURRENT HEART RATE</span><strong id="bpmValue">78</strong><small>BPM</small></div><div class="zone"><span>CALM ZONE</span><div class="zone-bar"><i id="zoneBar"></i></div><small id="zoneText">Balanced</small></div></div><div class="monitor-chart"><div class="chart-grid"></div><svg viewBox="0 0 640 180" preserveAspectRatio="none"><path id="monitorWave" d="M0 105 H75 L91 105 L105 101 L119 109 L133 105 H170 L187 105 L202 101 L217 109 L232 105 H269 L285 105 L301 55 L317 146 L333 105 H371 L387 105 L402 101 L417 109 L432 105 H474 L490 105 L506 101 L521 109 L536 105 H640" /></svg><span class="chart-axis">- 10 sec</span><span class="chart-axis right">NOW</span></div><div class="monitor-controls"><label for="bpmSlider">SIMULATE HEART RATE <output id="sliderOutput">78 BPM</output></label><input id="bpmSlider" type="range" min="52" max="142" value="78" /><div class="control-labels"><span>REST</span><span>ACTIVE</span><span>HIGH STRESS</span></div></div></div>
+      </section>
+
+      <section class="section experience-section" id="experience"><div class="section-heading"><div><span class="section-number">03 / THE EXPERIENCE</span><h2>More than<br /><em>a number.</em></h2></div><p>The digital twin turns raw biometric information into an experience that can be felt at a glance — an inviting bridge between data and self-awareness.</p></div><div class="experience-grid"><div class="experience-visual"><div class="unity-chip">UNITY / 3D ENVIRONMENT</div><div class="virtual-heart">♥</div><div class="rings"></div><div class="experience-caption"><span>THE USER'S DIGITAL TWIN</span><strong id="twinState">steady / present</strong></div></div><div class="principles"><article><span>01</span><div><h3>Instant feedback</h3><p>Heart-rate information is visible on the OLED display and in the virtual environment at the same time.</p></div></article><article><span>02</span><div><h3>Immersive understanding</h3><p>A living 3D representation makes physiological change easier to recognize and remember.</p></div></article><article><span>03</span><div><h3>Designed for care</h3><p>An engaging approach to heart-health and stress monitoring that keeps the person at the center.</p></div></article></div></div></section>
+
+      <section class="timeline-section" id="timeline"><div class="timeline-header"><span class="section-number">04 / PROJECT LOG</span><h2>Built with intent.</h2><p>January — April 2025</p></div><div class="timeline"><div class="timeline-item active"><span>JAN 2025</span><h3>Sense the signal</h3><p>Connected pulse sensor and ESP32 microcontroller to acquire real-time biometric data.</p></div><div class="timeline-item"><span>FEB 2025</span><h3>Make it visible</h3><p>Integrated OLED display for direct, at-a-glance heart-rate feedback.</p></div><div class="timeline-item"><span>MAR 2025</span><h3>Build the twin</h3><p>Created the Unity 3D environment and linked it to the physical data stream.</p></div><div class="timeline-item"><span>APR 2025</span><h3>Complete the loop</h3><p>Refined the experience into an immersive health and stress monitoring concept.</p></div></div></section>
+    </main>
+    <footer class="footer"><a class="brand" href="#top"><span class="brand-mark">+</span> Pulse<span>TWIN</span></a><p>Digital Heart Monitoring System · Health Care</p><span>© 2025</span></footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
